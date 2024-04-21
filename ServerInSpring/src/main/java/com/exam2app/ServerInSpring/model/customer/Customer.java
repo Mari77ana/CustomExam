@@ -5,6 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Entity
 public class Customer {
 
@@ -16,6 +19,8 @@ public class Customer {
     private Boolean isFavorite;
     private Boolean isChecked;
     private String comment;
+    private LocalDate date;
+    private LocalTime time;
 
     public int getId() {
         return id;
@@ -65,6 +70,22 @@ public class Customer {
         this.comment = comment;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -74,6 +95,8 @@ public class Customer {
                 ", isFavorite=" + isFavorite +
                 ", isChecked=" + isChecked +
                 ", comment='" + comment + '\'' +
+                ", date=" + date +
+                ", time=" + time +
                 '}';
     }
 }
