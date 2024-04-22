@@ -31,10 +31,15 @@ public class CustomerController {
         return customerDao.getCustomerById(id);
     }
 
-    @GetMapping("/customer/{id}")
+
+
+
+    @DeleteMapping("/customer/{id}")
     public void deleteCustomerById(@PathVariable int id) {
         customerDao.deleteCustomerById(id);
     }
+
+
 
 
 }
