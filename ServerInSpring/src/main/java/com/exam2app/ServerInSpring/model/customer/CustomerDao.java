@@ -27,5 +27,13 @@ public class CustomerDao {
         repository.delete(customer);
     }
 
+    public void deleteCustomerById(int customerId){
+        repository.deleteById(customerId);
+    }
+
+    public void getCustomerById(int customerId){
+        repository.findById(customerId);
+    }
+
 
 }
