@@ -18,12 +18,12 @@ class ServerInSpringApplicationTests {
 	@Autowired
 	private CustomerDao customerDao;
 
-	//@Test // it works to insert
+	@Test // it works to insert
 	void contextLoads() {
 		Customer customer = new Customer();
-		customer.setEmail("BruceLee@email.com");
-		customer.setPassword("karate");
-		customer.setComment("Hello I am Bruce");
+		customer.setEmail("Rachel@email.com");
+		customer.setPassword("tennis");
+		customer.setComment("Hello I am Rachel");
 		customer.setChecked(true);
 		customer.setFavorite(true);
 		customer.setDate(LocalDate.of(1970,5,13));
@@ -41,7 +41,7 @@ class ServerInSpringApplicationTests {
 
 	}
 
-	@Test // it works to get all
+	//@Test // it works to get all
 	void getAllCustomers(){
 		List<Customer> customers = customerDao.getAllCustomer();
 		System.out.println(customers);
