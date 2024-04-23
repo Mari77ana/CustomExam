@@ -13,10 +13,10 @@ public class CustomerController {
     @Autowired
     private CustomerDao customerDao;
 
-    @PostMapping()
+    @PostMapping("/customer/save")
     public void save(@RequestBody Customer customer) {
-        customerDao.save(customer);
-
+        System.out.println(customer);
+        System.out.println(customer.getChecked());
     }
 
     @GetMapping("/customer/get-all")
@@ -30,8 +30,6 @@ public class CustomerController {
     public Customer getCustomerById(@PathVariable int id) {
         return customerDao.getCustomerById(id);
     }
-
-
 
 
     @DeleteMapping("/customer/{id}")

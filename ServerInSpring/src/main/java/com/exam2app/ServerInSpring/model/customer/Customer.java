@@ -1,9 +1,6 @@
 package com.exam2app.ServerInSpring.model.customer;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -16,7 +13,9 @@ public class Customer {
     private int id;
     private String email;
     private String password;
+    @Column(name = "favorite") // no camel or _ in database
     private Boolean isFavorite;
+    @Column(name = "checked") // no camel or _ in database
     private Boolean isChecked;
     private String comment;
     private LocalDate date;
@@ -46,19 +45,19 @@ public class Customer {
         this.email = email;
     }
 
-    public Boolean getFavorite() {
+    public boolean getFavorite() {
         return isFavorite;
     }
 
-    public void setFavorite(Boolean favorite) {
-        isFavorite = favorite;
+    public void setFavorite(boolean isFavorite) {
+        this.isFavorite = isFavorite;
     }
 
-    public Boolean getChecked() {
+    public boolean getChecked() {
         return isChecked;
     }
 
-    public void setChecked(Boolean checked) {
+    public void setChecked(boolean checked) {
         isChecked = checked;
     }
 
